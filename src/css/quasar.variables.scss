@@ -12,7 +12,7 @@
 // to match your app's branding.
 // Tip: Use the "Theme Builder" on Quasar's documentation website.
 
-$primary   : #1976D2;
+$primary   : #19BD9B;
 $secondary : #26A69A;
 $accent    : #9C27B0;
 
@@ -22,3 +22,14 @@ $positive  : #21BA45;
 $negative  : #C10015;
 $info      : #31CCEC;
 $warning   : #F2C037;
+
+// Change breakpoints
+// Max width at which point
+// Current size ends
+$breakpoint-xs: 575px;
+$breakpoint-sm: 767px;
+$breakpoint-md: 991px;
+$breakpoint-lg: 1199px;
+
+// my variables
+$bg-navbar: #2a2b2d;
