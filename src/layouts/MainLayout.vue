@@ -28,7 +28,7 @@ export default {
 @import url('./../css/container.scss');
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', Open Sans, Arial, Helvetica, sans-serif;
 }
 
 .q-header {

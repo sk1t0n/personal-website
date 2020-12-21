@@ -6,8 +6,8 @@
     </q-toolbar-title>
 
     <ul class="gt-md">
-      <li v-for="link in links" :key="link.title">
-        <a>{{ link.title }}</a>
+      <li v-for="link in links" :key="link" @click="clickLink(link)">
+        <a>{{ link }}</a>
       </li>
     </ul>
 
@@ -17,6 +17,7 @@
 
 <script>
 import MobileMenu from 'components/MobileMenu'
+import scrollTo from '../utils'
 
 export default {
   name: 'Navbar',
@@ -27,12 +28,19 @@ export default {
 
   data: () => ({
     links: [
-      { title: 'About' },
-      { title: 'Work' },
-      { title: 'Education' },
-      { title: 'Contact' }
+      'about',
+      'work',
+      'education',
+      'contact'
     ]
-  })
+  }),
+
+  methods: {
+    clickLink (linkTitle) {
+      const element = document.querySelector(`#${linkTitle}>h2`)
+      scrollTo(element, this.updateDrawerState)
+    }
+  }
 }
 </script>
 
@@ -65,13 +73,13 @@ export default {
   }
 
   li {
+    font-family: Open Sans, Arial, Helvetica, sans-serif;
     font-size: 14px;
     text-transform: uppercase;
     cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
     position: relative;
-    font-family: Arial, Helvetica, sans-serif;
     transition: color 0.5s ease;
 
     &:not(:first-child)::before {
@@ -106,6 +114,18 @@ export default {
   span:last-child {
     color: $primary;
     margin-left: 8px;
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &:link, &:visited, &:active {
+    color: #fff;
+  }
+
+  &:hover {
+    color: $primary;
   }
 }
 </style>

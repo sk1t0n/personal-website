@@ -2,8 +2,8 @@
   <transition name="slide">
     <div class="drawer" v-if="this.getDrawer">
       <ul>
-        <li v-for="link in links" :key="link.title">
-          <a>{{ link.title }}</a>
+        <li v-for="link in links" :key="link" @click="clickLink(link)">
+          <a>{{ link }}</a>
         </li>
       </ul>
     </div>
@@ -11,17 +11,18 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
+import scrollTo from '../utils'
 
 export default {
   name: 'Drawer',
 
   data: () => ({
     links: [
-      { title: 'About' },
-      { title: 'Work' },
-      { title: 'Education' },
-      { title: 'Contact' }
+      'about',
+      'work',
+      'education',
+      'contact'
     ]
   }),
 
@@ -29,6 +30,17 @@ export default {
     ...mapGetters([
       'getDrawer'
     ])
+  },
+
+  methods: {
+    ...mapMutations([
+      'updateDrawerState'
+    ]),
+
+    clickLink (linkTitle) {
+      const element = document.querySelector(`#${linkTitle}>h2`)
+      scrollTo(element, this.updateDrawerState)
+    }
   }
 }
 </script>
@@ -45,7 +57,9 @@ export default {
     display: flex;
     flex-direction: column;
     list-style-type: none;
-    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0;
     margin-top: 0;
     margin-bottom: 0;
     border-top: 1px solid #ccc;
@@ -56,7 +70,15 @@ export default {
       padding-bottom: 11px;
       width: 100%;
       margin: 0;
-      border-bottom: 1px solid rgba($color: #fff, $alpha: 0.5);
+      transition: opacity 0.5s ease-in-out;
+
+      &::before {
+        display: none;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 }
@@ -64,10 +86,6 @@ export default {
 .slide-enter-active,
 .slide-leave-active {
   transition: height 0.5s ease-in-out;
-
-  li {
-    transition: opacity 0.5s ease-in-out;
-  }
 }
 
 .slide-enter,
@@ -81,7 +99,7 @@ export default {
 
 .slide-enter-to,
 .slide-leave {
-  height: 177px;
+  height: 213px;
 
   li {
     opacity: 1;

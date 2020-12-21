@@ -1,6 +1,6 @@
 <template>
   <div class="lt-lg">
-    <div ref="hamburger" class="hamburger" @click="hamburgerClick">
+    <div ref="hamburger" class="hamburger" @click="click">
       <div class="first"></div>
       <div class="second"></div>
       <div class="third"></div>
@@ -36,7 +36,7 @@ export default {
       updateDrawerState: 'updateDrawerState'
     }),
 
-    hamburgerClick () {
+    click () {
       this.$refs.hamburger.classList.toggle('close')
       if (this.getDrawer) {
         this.updateDrawerState(false)
