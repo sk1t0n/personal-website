@@ -4,19 +4,23 @@
     <hr />
     <Work />
     <hr />
+    <Education />
+    <hr />
   </q-page>
 </template>
 
 <script>
 import About from 'components/home-page/About'
 import Work from 'components/home-page/Work'
+import Education from 'components/home-page/Education'
 
 export default {
   name: 'PageIndex',
 
   components: {
     About,
-    Work
+    Work,
+    Education
   }
 }
 </script>
