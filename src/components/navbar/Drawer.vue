@@ -12,7 +12,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import scrollTo from '../utils'
+import scrollTo from '../../utils'
 
 export default {
   name: 'Drawer',

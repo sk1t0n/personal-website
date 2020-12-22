@@ -12,7 +12,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import Drawer from './Drawer.vue'
+import Drawer from './Drawer'
 
 export default {
   name: 'MobileMenu',

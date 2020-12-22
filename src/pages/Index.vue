@@ -1,34 +1,32 @@
 <template>
   <q-page>
-    <section id="about" class="about-me">
-      <h2>About <span>Me</span></h2>
-      <div class="row">
-        <q-img :src="photoUrl" transition="rotate" />
-        <div>
-          <p>Fullstack Developer</p>
-          <p>Programming languages: Python, JavaScript</p>
-          <p>Backend: Django, Django REST framework, FastAPI</p>
-          <p>Databases: PostgreSQL, MongoDB</p>
-          <p>Frontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js</p>
-          <p>DevOps: Docker, Ansible</p>
-        </div>
-      </div>
-    </section>
+    <About />
+    <hr />
+    <Work />
     <hr />
   </q-page>
 </template>
 
 <script>
+import About from 'components/home-page/About'
+import Work from 'components/home-page/Work'
+
 export default {
   name: 'PageIndex',
 
-  data: () => ({
-    photoUrl: 'images/photo.jpeg'
-  })
+  components: {
+    About,
+    Work
+  }
 }
 </script>
 
 <style lang="scss">
+section {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
 h2 {
   font-weight: 400;
   line-height: 1.25em;
@@ -42,26 +40,8 @@ h2 {
   }
 }
 
-.about-me {
-  .row {
-    margin-top: 20px;
-    justify-content: center;
-
-    .q-img {
-      max-width: 256px;
-      max-height: 256px;
-    }
-
-    div {
-      padding-top: 1.5em;
-    }
-
-    p {
-      font-size: 1em;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-  }
+hr {
+  border: 1px solid #ddd;
 }
 
 @media screen and (max-width: 767px) {
@@ -70,25 +50,9 @@ h2 {
     letter-spacing: 0.03em !important;
   }
 
-  .about-me {
-    .row {
-      flex-direction: column;
-      justify-content: center;
-      margin-left: 2em;
-      margin-right: 2em;
-
-      .q-img, div {
-        margin: 0 auto;
-      }
-
-      p:first-child {
-        margin-top: 20px;
-      }
-    }
-
-    & + hr {
-      margin-top: 30px;
-    }
+  hr {
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
 }
 
@@ -98,24 +62,9 @@ h2 {
     letter-spacing: 0.04em !important;
   }
 
-  .about-me {
-    .row {
-      .q-img {
-        margin-right: 30px;
-      }
-
-      p:first-child {
-        margin-top: 17px;
-      }
-    }
-
-    & + hr {
-      margin-top: 65px;
-    }
+  hr {
+    margin-top: 65px;
+    margin-bottom: 65px;
   }
-}
-
-.about-me + hr {
-  border: 1px solid #ddd;
 }
 </style>

@@ -16,8 +16,8 @@
 </template>
 
 <script>
-import MobileMenu from 'components/MobileMenu'
-import scrollTo from '../utils'
+import MobileMenu from './MobileMenu'
+import scrollTo from '../../utils'
 
 export default {
   name: 'Navbar',

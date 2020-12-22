@@ -7,5 +7,5 @@ export default function scrollTo (element, updateDrawerState = false) {
     updateDrawerState(false)
   }
 
-  window.scroll({ top: element.scrollHeight, behavior: 'smooth' })
+  window.scroll({ top: element.offsetTop, behavior: 'smooth' })
 }
