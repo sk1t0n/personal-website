@@ -6,6 +6,7 @@
     <hr />
     <Education />
     <hr />
+    <Contact />
   </q-page>
 </template>
 
@@ -13,6 +14,7 @@
 import About from 'components/home-page/About'
 import Work from 'components/home-page/Work'
 import Education from 'components/home-page/Education'
+import Contact from 'components/home-page/Contact'
 
 export default {
   name: 'PageIndex',
@@ -20,7 +22,8 @@ export default {
   components: {
     About,
     Work,
-    Education
+    Education,
+    Contact
   }
 }
 </script>

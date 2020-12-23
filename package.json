@@ -1,9 +1,9 @@
 {
-  "name": "test_quasar",
-  "version": "0.0.1",
-  "description": "A Quasar Framework app",
-  "productName": "Quasar App",
-  "author": "Anton Grabovsky <banderos893@gmail.com>",
+  "name": "personal_site",
+  "version": "0.1.0",
+  "description": "Personal website of Anton Grabovsky",
+  "productName": "Personal website of Anton Grabovsky",
+  "author": "Anton Grabovsky <agrabovsky2020@gmail.com>",
   "private": true,
   "scripts": {
     "lint": "eslint --ext .js,.vue ./",

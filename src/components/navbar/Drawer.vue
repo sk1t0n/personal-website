@@ -70,7 +70,7 @@ export default {
       padding-bottom: 11px;
       width: 100%;
       margin: 0;
-      transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 
       &::before {
         display: none;
@@ -94,6 +94,7 @@ export default {
 
   li {
     opacity: 0;
+    visibility: hidden;
   }
 }
 
@@ -103,6 +104,7 @@ export default {
 
   li {
     opacity: 1;
+    visibility: visible;
   }
 }
 </style>
