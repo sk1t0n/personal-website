@@ -30,8 +30,4 @@ export default {
 body {
   font-family: 'Roboto', Open Sans, Arial, Helvetica, sans-serif;
 }
-
-.q-header {
-  background-color: $bg-navbar;
-}
 </style>

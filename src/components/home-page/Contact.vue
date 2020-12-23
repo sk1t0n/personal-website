@@ -47,7 +47,6 @@ export default {
     text-align: center;
 
     a {
-      color: #111;
       margin: auto 10px;
       font-size: 30px;
       padding: 3px 0px;

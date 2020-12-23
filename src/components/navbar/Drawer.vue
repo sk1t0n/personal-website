@@ -3,7 +3,7 @@
     <div class="drawer" v-if="this.getDrawer">
       <ul>
         <li v-for="link in links" :key="link" @click="clickLink(link)">
-          <a>{{ link }}</a>
+          {{ link }}
         </li>
       </ul>
     </div>
@@ -12,7 +12,7 @@
 
 <script>
 import { mapGetters, mapMutations } from 'vuex'
-import scrollTo from '../../utils'
+import { scrollTo } from '../../utils'
 
 export default {
   name: 'Drawer',
@@ -66,11 +66,15 @@ export default {
 
     li {
       text-align: center;
-      padding-top: 11px;
-      padding-bottom: 11px;
       width: 100%;
       margin: 0;
       transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+      padding-top: 11px;
+      padding-bottom: 11px;
+
+      &:hover {
+        color: $primary;
+      }
 
       &::before {
         display: none;
