@@ -1,32 +1,34 @@
 <template>
   <section id="work" class="container">
-    <h2>Work <span>experience</span></h2>
+    <h2>{{ $t('work.word1') }} <span>{{ $t('work.word2') }}</span></h2>
     <q-timeline :layout="timelineLayout">
       <q-timeline-entry
-        title="Komi Republican Agroindustrial College (Russia, Komi Republic, Vylgort)"
-        subtitle="September 2017 - October 2018"
+        :title="$t('work.timeline1.title') + ''"
+        :subtitle="$t('work.timeline1.subtitle')"
         side="right"
       >
+        <h6 class="location">{{ $t('work.timeline1.location') }}</h6>
         <div>
-          Support of the technical school website. Development of various projects:
+          {{ $t('work.timeline1.div') }}
           <ul>
-            <li>KraptTaskManager - a program for compressing a folder with pictures for a site (made in Java, JavaFX, Gulp)</li>
-            <li>krapt-news.herokuapp.com - archived news site from krapt-rk.ru (made with Ruby on Rails, Bootstrap 4)</li>
-            <li>PublishNews - a program for publishing news to the sites krapt-rk.ru and krapt-news.herokuapp.com (made on NodeJs, Electron)</li>
-            <li>Dobrodey11 - Android application for volunteers: news, promotions (information and google map), chat, feedback (sending an email) (made in Java, Android SDK, Firebase)</li>
-            <li>AdminPanelDobrodey11 - a program for publishing news with sending push notifications and changing data about collecting things in the database (made on NodeJS, Electron)</li>
-            <li>Helper scripts for changing links to images when transferring them to another hosting (php, python3, ruby, bash)</li>
+            <li>{{ $t('work.timeline1.li1') }}</li>
+            <li>{{ $t('work.timeline1.li2') }}</li>
+            <li>{{ $t('work.timeline1.li3') }}</li>
+            <li>{{ $t('work.timeline1.li4') }} <a href="http://krapt-rk.ru/apk/dobrodey11.apk">http://krapt-rk.ru/apk/dobrodey11.apk</a></li>
+            <li>{{ $t('work.timeline1.li5') }}</li>
+            <li>{{ $t('work.timeline1.li6') }}</li>
           </ul>
         </div>
       </q-timeline-entry>
 
       <q-timeline-entry
-        title="SYKGEYMLAB LLC (Russia, Komi Republic, Syktyvkar)"
-        subtitle="November 2018 - August 2019"
+        :title="$t('work.timeline2.title')"
+        :subtitle="$t('work.timeline2.subtitle')"
         side="left"
       >
+        <h6 class="location">{{ $t('work.timeline2.location') }}</h6>
         <div>
-          Development of mobile games on the Unity engine.
+          {{ $t('work.timeline2.div') }}
         </div>
       </q-timeline-entry>
     </q-timeline>
@@ -55,8 +57,21 @@ export default {
     margin-bottom: 60px
   }
 
+  .location {
+    margin-top: -10px;
+    font-size: 1.2em;
+  }
+
   .q-timeline__content ul {
     list-style-type: disc;
+  }
+
+  a:link, a:visited, a:focus, a:active {
+    color: $primary;
+  }
+
+  a:hover {
+    color: darken($color: $primary, $amount: 20)
   }
 }
 

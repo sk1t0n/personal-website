@@ -1,15 +1,15 @@
 <template>
   <section id="about">
-    <h2>About <span>Me</span></h2>
+    <h2>{{ $t('about.word1') }} <span>{{ $t('about.word2') }}</span></h2>
     <div class="row">
       <q-img :src="photoUrl" transition="rotate" />
       <div>
-        <p>Fullstack Developer</p>
-        <p>Programming languages: Python, JavaScript</p>
-        <p>Backend: Django, Django REST framework, FastAPI</p>
-        <p>Databases: PostgreSQL, MongoDB</p>
-        <p>Frontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js</p>
-        <p>DevOps: Docker, Ansible</p>
+        <p>{{ $t('about.p1') }}</p>
+        <p>{{ $t('about.p2') }}</p>
+        <p>{{ $t('about.p3') }}</p>
+        <p>{{ $t('about.p4') }}</p>
+        <p>{{ $t('about.p5') }}</p>
+        <p>{{ $t('about.p6') }}</p>
       </div>
     </div>
   </section>

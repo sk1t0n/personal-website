@@ -2,8 +2,11 @@
   <transition name="slide">
     <div class="drawer" v-if="this.getDrawer">
       <ul>
-        <li v-for="link in links" :key="link" @click="clickLink(link)">
-          {{ link }}
+        <li
+          v-for="(link, i) in links" :key="i"
+          @click="clickLink(link.translateKey.split('.')[1])"
+        >
+          {{ $t(link.translateKey) }}
         </li>
       </ul>
     </div>
@@ -19,10 +22,10 @@ export default {
 
   data: () => ({
     links: [
-      'about',
-      'work',
-      'education',
-      'contact'
+      { translateKey: 'navbar.about' },
+      { translateKey: 'navbar.work' },
+      { translateKey: 'navbar.education' },
+      { translateKey: 'navbar.contact' }
     ]
   }),
 
@@ -68,7 +71,6 @@ export default {
       text-align: center;
       width: 100%;
       margin: 0;
-      transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
       padding-top: 11px;
       padding-bottom: 11px;
 
@@ -87,9 +89,20 @@ export default {
   }
 }
 
-.slide-enter-active,
+.slide-enter-active {
+  transition: height 0.4s ease;
+
+  li {
+    transition: all 0.8s ease;
+  }
+}
+
 .slide-leave-active {
-  transition: height 0.5s ease-in-out;
+  transition: height 0.5s ease;
+
+  li {
+    transition: all 0.25s ease;
+  }
 }
 
 .slide-enter,

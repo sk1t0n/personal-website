@@ -1,20 +1,20 @@
 <template>
   <section id="education" class="container">
-    <h2>My <span>education</span></h2>
+    <h2>{{ $t('education.word1') }} <span>{{ $t('education.word2') }}</span></h2>
     <q-card class="my-card">
       <q-img :src="image">
         <div class="absolute-top text-subtitle2 text-center">
-          Plate deflection
+          {{ $t('education.image_title') }}
         </div>
       </q-img>
 
       <q-card-section>
-        <div class="text-h6">2013 - 2017</div>
-        <div class="text-subtitle2">Pitirim Sorokin Syktyvkar State University</div>
+        <div class="text-h6">{{ $t('education.title') }}</div>
+        <div class="text-subtitle2">{{ $t('education.subtitle') }}</div>
       </q-card-section>
 
       <q-card-section class="q-pt-none">
-        Bachelor of mathematics
+        {{ $t('education.content') }}
       </q-card-section>
     </q-card>
   </section>

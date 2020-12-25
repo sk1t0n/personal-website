@@ -1,6 +1,6 @@
 <template>
   <section id="contact" class="container">
-    <h2>Contact <span>me</span></h2>
+    <h2>{{ $t('contact.word1') }} <span>{{ $t('contact.word2') }}</span></h2>
     <div>
       <q-btn
         v-for="(icon, i) in icons" :key="i"
