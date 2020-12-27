@@ -44,7 +44,8 @@ export default {
     word2: 'education',
     image_title: 'Deflection of a rectangular plate',
     title: '2013 - 2017',
-    subtitle: 'Pitirim Sorokin Syktyvkar State University',
+    subtitle1: 'Pitirim Sorokin Syktyvkar State University',
+    subtitle2: 'Mathematics and Computer Science',
     content: 'Bachelor of mathematics'
   },
   contact: {

@@ -10,7 +10,8 @@
 
       <q-card-section>
         <div class="text-h6">{{ $t('education.title') }}</div>
-        <div class="text-subtitle2">{{ $t('education.subtitle') }}</div>
+        <div class="subtitle">{{ $t('education.subtitle1') }}</div>
+        <div class="subtitle">{{ $t('education.subtitle2') }}</div>
       </q-card-section>
 
       <q-card-section class="q-pt-none">
@@ -41,6 +42,10 @@ export default {
     .q-img__content > div {
       background: none;
       color: #000
+    }
+
+    .subtitle {
+      font-weight: 600;
     }
   }
 }
