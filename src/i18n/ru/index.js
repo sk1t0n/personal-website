@@ -15,7 +15,8 @@ export default {
     p3: 'Бэкенд: Django, Django REST framework, FastAPI',
     p4: 'Базы данных: PostgreSQL, MongoDB',
     p5: 'Фронтенд: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
-    p6: 'DevOps: Docker, Docker Compose, Ansible'
+    p6: 'DevOps: Docker, Docker Compose, Ansible',
+    p7: 'Разное: парсеры сайтов (Beautiful Soup, Scrapy, Selenium), телеграм-боты (aiogram)'
   },
   work: {
     word1: 'Опыт',

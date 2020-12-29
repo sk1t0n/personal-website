@@ -10,6 +10,7 @@
         <p>{{ $t('about.p4') }}</p>
         <p>{{ $t('about.p5') }}</p>
         <p>{{ $t('about.p6') }}</p>
+        <p>{{ $t('about.p7') }}</p>
       </div>
     </div>
   </section>
@@ -37,7 +38,7 @@ export default {
     }
 
     div {
-      padding-top: 1.5em;
+      padding-top: 0.6em;
     }
 
     p {

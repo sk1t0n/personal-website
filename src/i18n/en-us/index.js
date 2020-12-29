@@ -15,7 +15,8 @@ export default {
     p3: 'Backend: Django, Django REST framework, FastAPI',
     p4: 'Databases: PostgreSQL, MongoDB',
     p5: 'Frontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
-    p6: 'DevOps: Docker, Docker Compose, Ansible'
+    p6: 'DevOps: Docker, Docker Compose, Ansible',
+    p7: 'Other: Web scraping (Beautiful Soup, Scrapy, Selenium), Telegram bots (aiogram)'
   },
   work: {
     word1: 'Work',
