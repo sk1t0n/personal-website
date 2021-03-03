@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`About.vue correct snapshot 1`] = `"About Me  Fullstack Developer Programming languages: Python, JavaScript Backend: Django, Django REST framework, FastAPI Databases: PostgreSQL, MongoDB Frontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js DevOps: Docker, Docker Compose, Ansible Other: Web scraping (Beautiful Soup, Scrapy, Selenium), Telegram bots (aiogram)"`;
