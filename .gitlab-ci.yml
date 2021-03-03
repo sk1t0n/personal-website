@@ -1,0 +1,22 @@
+image: "node:latest"
+
+before_script:
+  - npm install
+
+stages:
+  - testing
+  - deployment
+
+jest:
+  stage: testing
+  script:
+    - npm run test:unit:ci
+
+surge:
+  stage: deployment
+  script:
+    - npm install -g @quasar/cli
+    - npm install -g surge
+    - quasar build
+    - surge dist/spa
+
