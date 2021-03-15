@@ -1,7 +1,7 @@
 <template>
   <section id="education" class="container">
     <h2>{{ $t('education.word1') }} <span>{{ $t('education.word2') }}</span></h2>
-    <q-card class="my-card">
+    <q-card>
       <q-img :src="image">
         <div class="absolute-top text-subtitle2 text-center">
           {{ $t('education.image_title') }}

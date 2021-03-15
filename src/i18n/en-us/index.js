@@ -26,11 +26,11 @@ export default {
       location: 'Russia, Komi Republic, Vylgort',
       subtitle: 'September 2017 - October 2018',
       div: 'Support of the technical school website. Development of various projects:',
-      li1: 'KraptTaskManager - a program for compressing a folder with pictures for a site (made in Java, JavaFX, Gulp)',
+      li1: 'a program for compressing a folder with pictures for a site (made in Java, JavaFX, Gulp)',
       li2: 'krapt-news.herokuapp.com - archive of news from the site krapt-rk.ru (made with Ruby on Rails, Bootstrap 4)',
-      li3: 'PublishNews - a program for publishing news to the sites krapt-rk.ru and krapt-news.herokuapp.com (made in NodeJs, Electron)',
-      li4: 'Dobrodey11 - Android application for volunteers: news, promotions (information and google map), chat, feedback (sending a message to the developer\'s email) (made in Java, Android SDK, Firebase). Link to apk file:',
-      li5: 'AdminPanelDobrodey11 - a program for publishing news with sending push notifications to the Dobrodey11 Android application and to change data about collecting things in the Firebase database (made in NodeJS, Electron)',
+      li3: 'a program for publishing news to the sites krapt-rk.ru and krapt-news.herokuapp.com (made in NodeJs, Electron)',
+      li4: 'Android application for volunteers: news, promotions (information and google map), chat, feedback (sending a message to the developer\'s email) (made in Java, Android SDK, Firebase). Link to apk file:',
+      li5: 'a program for publishing news with sending push notifications to the Dobrodey11 Android application and to change data about collecting things in the Firebase database (made in NodeJS, Electron)',
       li6: 'Helper scripts for changing links to images when transferring them to another hosting (php, python, ruby, bash)'
     },
     timeline2: {
