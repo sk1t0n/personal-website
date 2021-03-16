@@ -43,7 +43,8 @@ export default {
   education: {
     word1: 'My',
     word2: 'education',
-    image_title: 'Deflection of a rectangular plate',
+    image_title1: 'Deflection of a rectangular plate',
+    image_title2: 'Colloquium on analytical geometry',
     title: '2013 - 2017',
     subtitle1: 'Pitirim Sorokin Syktyvkar State University',
     subtitle2: 'Mathematics and Computer Science',
