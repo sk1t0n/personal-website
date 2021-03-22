@@ -2,6 +2,8 @@
 
 Personal website of Anton Grabovsky
 
+![screenshot](screenshot.png)
+
 ## Install the dependencies
 
 ```bash
