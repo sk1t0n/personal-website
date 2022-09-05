@@ -11,12 +11,11 @@ export default {
     word1: 'About',
     word2: 'Me',
     p1: 'Fullstack Developer',
-    p2: 'Programming languages: Python, JavaScript',
-    p3: 'Backend: Django, Django REST framework, FastAPI',
+    p2: 'Programming languages: PHP 8.1, JavaScript (ES6 and later)',
+    p3: 'Backend: Symfony',
     p4: 'Databases: PostgreSQL, MongoDB',
     p5: 'Frontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
-    p6: 'DevOps: Docker, Docker Compose, Ansible',
-    p7: 'Other: Web scraping (Beautiful Soup, Scrapy, Selenium), Telegram bots (aiogram)'
+    p6: 'DevOps: Docker, Docker Compose'
   },
   work: {
     word1: 'Work',

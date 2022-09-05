@@ -11,12 +11,11 @@ export default {
     word1: 'Обо',
     word2: 'мне',
     p1: 'Fullstack разработчик',
-    p2: 'Языки программирования: Python, JavaScript',
-    p3: 'Бэкенд: Django, Django REST framework, FastAPI',
+    p2: 'Языки программирования: PHP 8.1, JavaScript (ES6 и более поздние версии)',
+    p3: 'Бэкенд: Symfony',
     p4: 'Базы данных: PostgreSQL, MongoDB',
     p5: 'Фронтенд: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
-    p6: 'DevOps: Docker, Docker Compose, Ansible',
-    p7: 'Разное: парсеры сайтов (Beautiful Soup, Scrapy, Selenium), телеграм-боты (aiogram)'
+    p6: 'DevOps: Docker, Docker Compose'
   },
   work: {
     word1: 'Опыт',

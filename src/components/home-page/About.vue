@@ -10,7 +10,6 @@
         <p>{{ $t('about.p4') }}</p>
         <p>{{ $t('about.p5') }}</p>
         <p>{{ $t('about.p6') }}</p>
-        <p>{{ $t('about.p7') }}</p>
       </div>
     </div>
   </section>
