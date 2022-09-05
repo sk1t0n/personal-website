@@ -31,6 +31,17 @@
           {{ $t('work.timeline2.div') }}
         </div>
       </q-timeline-entry>
+
+      <q-timeline-entry
+        :title="$t('work.timeline3.title')"
+        :subtitle="$t('work.timeline3.subtitle')"
+        side="right"
+      >
+        <h6 class="location">{{ $t('work.timeline3.location') }}</h6>
+        <div>
+          {{ $t('work.timeline3.div') }}
+        </div>
+      </q-timeline-entry>
     </q-timeline>
     <q-dialog v-model="dialog">
       <q-card>

@@ -38,6 +38,12 @@ export default {
       location: 'Russia, Komi Republic, Syktyvkar',
       subtitle: 'November 2018 - August 2019',
       div: 'Development of mobile games on the Unity engine.'
+    },
+    timeline3: {
+      title: 'Introvert CRM Systems',
+      location: 'Russia, Moscow',
+      subtitle: 'February 2022 - May 2022',
+      div: 'Development of add-ons for AmoCRM.'
     }
   },
   education: {
