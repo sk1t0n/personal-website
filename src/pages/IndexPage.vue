@@ -10,22 +10,11 @@
   </q-page>
 </template>
 
-<script>
-import About from 'components/home-page/About'
-import Work from 'components/home-page/Work'
-import Education from 'components/home-page/Education'
-import Contact from 'components/home-page/Contact'
-
-export default {
-  name: 'PageIndex',
-
-  components: {
-    About,
-    Work,
-    Education,
-    Contact
-  }
-}
+<script setup>
+import About from 'src/components/home-page/About.vue';
+import Work from 'src/components/home-page/Work.vue'
+import Education from 'src/components/home-page/Education.vue'
+import Contact from 'src/components/home-page/Contact.vue'
 </script>
 
 <style lang="scss">

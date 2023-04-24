@@ -6,141 +6,117 @@
     </q-toolbar-title>
 
     <ul class="gt-md">
-      <li
-        v-for="(link, i) in links" :key="i"
-        @click="clickLink(link.translateKey.split('.')[1])"
-      >
+      <li v-for="(link, i) in links" :key="i" @click="linkHandler(link.translateKey.split('.')[1])">
         {{ $t(link.translateKey) }}
       </li>
     </ul>
 
-    <q-btn-dropdown
-      flat unelevated :dropdown-icon="fasAngleDown"
-      :label="langLabel" class="languages"
-    >
+    <q-btn-dropdown :ripple="false" unelevated :label="langLabel" class="languages">
       <q-list>
-        <q-item
-          v-for="(lang, i) in languages" :key="i"
-          clickable v-close-popup @click="changeLanguage(lang)"
-        >
+        <q-item v-for="(lang, i) in languages" :key="i" clickable v-close-popup @click="changeLanguage(lang)">
           <q-item-section>
-            <q-item-label>{{ getLangText(lang) }}</q-item-label>
+            <q-item-label class="language-label">{{ getLangText(lang) }}</q-item-label>
           </q-item-section>
         </q-item>
       </q-list>
     </q-btn-dropdown>
 
-    <q-btn
-      round flat :icon="darkModeIcon" class="btn-dark-mode"
-      @click="changeDarkMode"
-    />
+    <q-btn round flat :icon="darkModeIcon" class="btn-dark-mode" @click="changeDarkMode" />
 
     <MobileMenu />
   </q-toolbar>
 </template>
 
-<script>
-import MobileMenu from './MobileMenu'
-import { scrollTo, getCookie, setCookie } from '../../utils'
-import { farMoon, farSun, fasAngleDown } from '@quasar/extras/fontawesome-v5'
+<script setup>
+import { computed, onBeforeMount, onMounted, ref } from 'vue'
+import { useQuasar } from 'quasar'
+import { useI18n } from 'vue-i18n'
+import { farMoon, farSun } from '@quasar/extras/fontawesome-v5'
+import { useDrawerStore } from 'src/stores/drawer'
+import { scrollTo, getCookie, setCookie } from 'src/utils'
+import MobileMenu from 'src/components/navbar/MobileMenu.vue'
 
-export default {
-  name: 'Navbar',
+const links = [
+  { translateKey: 'navbar.about' },
+  { translateKey: 'navbar.work' },
+  { translateKey: 'navbar.education' },
+  { translateKey: 'navbar.contact' }
+]
 
-  components: {
-    MobileMenu
-  },
+const store = useDrawerStore()
+const $q = useQuasar()
 
-  created () {
-    this.farMoon = farMoon
-    this.farSun = farSun
-    this.fasAngleDown = fasAngleDown
+const { locale } = useI18n({ useScope: 'global' })
+const langLabel = ref(getLangText(getCookie('locale')))
 
-    // set dark mode
-    const darkMode = Boolean(getCookie('darkMode'))
-    this.$q.dark.set(darkMode)
+const languages = [
+  'en-us',
+  'ru'
+]
 
-    // set locale
-    const locale = getCookie('locale')
-    this.$i18n.locale = locale
-  },
+const darkModeIcon = computed(() => {
+  return $q.dark.isActive ? farSun : farMoon
+})
 
-  mounted () {
-    // set navbar theme
-    const navbar = document.querySelector('.q-header')
-    if (this.$q.dark.isActive) {
-      navbar.classList.remove('navbar-light')
-      navbar.classList.add('navbar-dark')
-    } else {
-      navbar.classList.remove('navbar-dark')
-      navbar.classList.add('navbar-light')
-    }
-  },
+onBeforeMount(() => {
+  // set dark mode
+  $q.dark.set(Boolean(getCookie('darkMode')))
 
-  data () {
-    return {
-      links: [
-        { translateKey: 'navbar.about' },
-        { translateKey: 'navbar.work' },
-        { translateKey: 'navbar.education' },
-        { translateKey: 'navbar.contact' }
-      ],
-      languages: [
-        'en-us',
-        'ru'
-      ],
-      langLabel: this.getLangText(getCookie('locale'))
-    }
-  },
+  // set locale
+  locale.value = getCookie('locale')
+})
 
-  computed: {
-    darkModeIcon () {
-      if (this.$q.dark.isActive) {
-        return this.farSun
-      } else {
-        return this.farMoon
-      }
-    }
-  },
-
-  methods: {
-    clickLink (linkTitle) {
-      const element = document.querySelector(`#${linkTitle}>h2`)
-      scrollTo(element, this.updateDrawerState)
-    },
-
-    changeDarkMode () {
-      const navbar = document.querySelector('.q-header')
-
-      if (this.$q.dark.isActive) {
-        navbar.classList.remove('navbar-dark')
-        navbar.classList.add('navbar-light')
-
-        setCookie('darkMode', '', 7)
-      } else {
-        navbar.classList.remove('navbar-light')
-        navbar.classList.add('navbar-dark')
-
-        setCookie('darkMode', 'true', 7)
-      }
-
-      this.$q.dark.toggle()
-    },
-
-    getLangText (lang) {
-      if (lang) {
-        return lang.substr(0, 2).toUpperCase()
-      } else {
-        return 'EN'
-      }
-    },
-
-    changeLanguage (lang) {
-      this.langLabel = this.getLangText(lang)
-      this.$i18n.locale = lang
-      setCookie('locale', lang, 7)
-    }
+onMounted(() => {
+  // set navbar theme
+  const navbar = document.querySelector('.q-header')
+  if ($q.dark.isActive) {
+    navbar.classList.remove('navbar-light')
+    navbar.classList.add('navbar-dark')
+  } else {
+    navbar.classList.remove('navbar-dark')
+    navbar.classList.add('navbar-light')
   }
+
+  // disable hover button.languages
+  document.querySelector('button.languages span.q-focus-helper').style = 'display: none'
+
+  // add class to navbar About item
+  const menu = document.querySelector('.q-toolbar ul').childNodes
+  const classActive = 'menudesktop__item--active'
+  menu[1].classList.add(classActive)
+})
+
+function linkHandler(linkTitle) {
+  const element = document.querySelector(`#${linkTitle}>h2`)
+  scrollTo(element, store.updateDrawer)
+}
+
+function changeDarkMode() {
+  const navbar = document.querySelector('.q-header')
+
+  if ($q.dark.isActive) {
+    navbar.classList.remove('navbar-dark')
+    navbar.classList.add('navbar-light')
+
+    setCookie('darkMode', '', 7)
+  } else {
+    navbar.classList.remove('navbar-light')
+    navbar.classList.add('navbar-dark')
+
+    setCookie('darkMode', 'true', 7)
+  }
+
+  $q.dark.toggle()
+}
+
+function getLangText(lang) {
+  return lang ? lang.substr(0, 2).toUpperCase() : 'EN'
+}
+
+function changeLanguage(lang) {
+  langLabel.value = getLangText(lang)
+  locale.value = lang
+  setCookie('locale', locale.value, 7)
 }
 </script>
 
@@ -171,12 +147,19 @@ export default {
 .navbar-dark {
   background-color: #fff;
 
-  .logo > span, .logo + ul > li, .logo + ul + button, .drawer li, .btn-dark-mode {
+  .logo>span,
+  .logo+ul>li,
+  .logo+ul+button,
+  .drawer li,
+  .btn-dark-mode {
     color: #000;
   }
-  .logo + ul > li:not(:first-child)::before, .hamburger div {
+
+  .logo+ul>li:not(:first-child)::before,
+  .hamburger div {
     background-color: #000;
   }
+
   .drawer {
     background-color: #fff;
   }
@@ -185,12 +168,19 @@ export default {
 .navbar-light {
   background-color: $bg-navbar;
 
-  .logo > span, .logo + ul > li, .logo + ul + button, .drawer li, .btn-dark-mode {
+  .logo>span,
+  .logo+ul>li,
+  .logo+ul+button,
+  .drawer li,
+  .btn-dark-mode {
     color: #fff;
   }
-  .logo + ul > li:not(:first-child)::before, .hamburger div {
+
+  .logo+ul>li:not(:first-child)::before,
+  .hamburger div {
     background-color: #fff;
   }
+
   .drawer {
     background-color: $bg-navbar;
   }
@@ -224,9 +214,9 @@ export default {
       left: -13px;
       width: 4px;
       height: 4px;
-      -moz-border-radius: 50%;     // Firefox
-      -webkit-border-radius: 50%;  // Safari
-      border-radius: 50%;          // other
+      -moz-border-radius: 50%; // Firefox
+      -webkit-border-radius: 50%; // Safari
+      border-radius: 50%; // other
       background-color: #fff;
     }
 
@@ -267,20 +257,19 @@ export default {
   }
 }
 
-button.languages {
-  height: 0px;
+.language-label {
+  text-align: center;
+}
 
-  svg {
-    display: none;
+button.languages {
+  margin-right: -8px;
+
+  span:hover {
+    color: $primary;
   }
 
   span.block {
     font-family: Open Sans, Arial, Helvetica, sans-serif;
-    margin-top: -35px;
-
-    &:hover {
-      color: $primary;
-    }
   }
 }
 

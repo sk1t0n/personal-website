@@ -2,35 +2,20 @@
   <section id="contact" class="container">
     <h2>{{ $t('contact.word1') }} <span>{{ $t('contact.word2') }}</span></h2>
     <div>
-      <q-btn
-        v-for="(icon, i) in icons" :key="i"
-        type="a" :href="icon.url" target="_blank"
-        :icon="icon.name" unelevated
-      />
+      <q-btn v-for="(icon, i) in icons" :key="i" type="a" :href="icon.url" target="_blank" :icon="icon.name" unelevated
+        fab class="btnIcon" />
     </div>
   </section>
 </template>
 
-<script>
+<script setup>
 import { fasEnvelope, fabGithub, fabGitlab } from '@quasar/extras/fontawesome-v5'
 
-export default {
-  name: 'Contact',
-
-  created () {
-    this.fabGithub = fabGithub
-    this.fabGitlab = fabGitlab
-    this.fasEnvelope = fasEnvelope
-  },
-
-  data: () => ({
-    icons: [
-      { name: fasEnvelope, url: 'mailto:agrabovsky2020@gmail.com' },
-      { name: fabGithub, url: 'https://github.com/sk1t0n' },
-      { name: fabGitlab, url: 'https://gitlab.com/woolster' }
-    ]
-  })
-}
+const icons = [
+  { name: fasEnvelope, url: 'mailto:agrabovsky2020@gmail.com' },
+  { name: fabGithub, url: 'https://github.com/sk1t0n' },
+  { name: fabGitlab, url: 'https://gitlab.com/woolster' }
+]
 </script>
 
 <style lang="scss">
@@ -55,6 +40,16 @@ export default {
       &:hover {
         background-color: $primary;
       }
+    }
+  }
+}
+
+.btnIcon {
+  span.q-icon {
+    font-size: 1.7em;
+
+    svg {
+      padding: 0.1em;
     }
   }
 }

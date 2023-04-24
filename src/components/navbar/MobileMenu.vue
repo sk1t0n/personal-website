@@ -1,6 +1,6 @@
 <template>
   <div class="lt-lg">
-    <div ref="hamburger" class="hamburger" @click="click">
+    <div ref="hamburger" class="hamburger" @click="hamburgerHandler">
       <div class="first"></div>
       <div class="second"></div>
       <div class="third"></div>
@@ -10,40 +10,21 @@
   </div>
 </template>
 
-<script>
-import { mapGetters, mapMutations } from 'vuex'
-import Drawer from './Drawer'
+<script setup>
+import { ref } from 'vue'
+import { useDrawerStore } from 'src/stores/drawer'
+import Drawer from 'src/components/navbar/Drawer.vue'
 
-export default {
-  name: 'MobileMenu',
+const store = useDrawerStore()
 
-  components: {
-    Drawer
-  },
+const hamburger = ref(null)
 
-  computed: {
-    ...mapGetters([
-      'getDrawer'
-    ]),
-
-    drawer () {
-      return this.getDrawer
-    }
-  },
-
-  methods: {
-    ...mapMutations({
-      updateDrawerState: 'updateDrawerState'
-    }),
-
-    click () {
-      this.$refs.hamburger.classList.toggle('close')
-      if (this.getDrawer) {
-        this.updateDrawerState(false)
-      } else {
-        this.updateDrawerState(true)
-      }
-    }
+function hamburgerHandler() {
+  hamburger.value.classList.toggle('close')
+  if (store.drawer) {
+    store.updateDrawer(false)
+  } else {
+    store.updateDrawer(true)
   }
 }
 </script>

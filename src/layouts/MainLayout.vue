@@ -12,25 +12,15 @@
   </q-layout>
 </template>
 
-<script>
-import Navbar from 'components/navbar/Navbar'
-import { changeActiveMenuDesktopItem } from '../utils'
+<script setup>
+import Navbar from 'src/components/navbar/Navbar.vue'
+import { changeActiveMenuDesktopItem } from 'src/utils'
 
-export default {
-  name: 'MainLayout',
-
-  components: {
-    Navbar
-  },
-
-  methods: {
-    scrollHandler (e) {
-      if (document.querySelector('body').clientWidth >= 980) {
-        changeActiveMenuDesktopItem(e.position)
-      }
-    }
+const scrollHandler = (e) => {
+  if (document.querySelector('body').clientWidth >= 980) {
+    changeActiveMenuDesktopItem(e.position)
   }
-}
+};
 </script>
 
 <style lang="scss">

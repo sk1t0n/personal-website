@@ -1,11 +1,8 @@
 <template>
   <transition name="slide">
-    <div class="drawer" v-if="this.getDrawer">
+    <div class="drawer" v-if="store.drawer">
       <ul>
-        <li
-          v-for="(link, i) in links" :key="i"
-          @click="clickLink(link.translateKey.split('.')[1])"
-        >
+        <li v-for="(link, i) in links" :key="i" @click="linkHandler(link.translateKey.split('.')[1])">
           {{ $t(link.translateKey) }}
         </li>
       </ul>
@@ -13,38 +10,22 @@
   </transition>
 </template>
 
-<script>
-import { mapGetters, mapMutations } from 'vuex'
-import { scrollTo } from '../../utils'
+<script setup>
+import { scrollTo } from 'src/utils'
+import { useDrawerStore } from 'src/stores/drawer'
 
-export default {
-  name: 'Drawer',
+const store = useDrawerStore()
 
-  data: () => ({
-    links: [
-      { translateKey: 'navbar.about' },
-      { translateKey: 'navbar.work' },
-      { translateKey: 'navbar.education' },
-      { translateKey: 'navbar.contact' }
-    ]
-  }),
+const links = [
+  { translateKey: 'navbar.about' },
+  { translateKey: 'navbar.work' },
+  { translateKey: 'navbar.education' },
+  { translateKey: 'navbar.contact' }
+]
 
-  computed: {
-    ...mapGetters([
-      'getDrawer'
-    ])
-  },
-
-  methods: {
-    ...mapMutations([
-      'updateDrawerState'
-    ]),
-
-    clickLink (linkTitle) {
-      const element = document.querySelector(`#${linkTitle}>h2`)
-      scrollTo(element, this.updateDrawerState)
-    }
-  }
+function linkHandler(linkTitle) {
+  const element = document.querySelector(`#${linkTitle}>h2`)
+  scrollTo(element, store.updateDrawer)
 }
 </script>
 

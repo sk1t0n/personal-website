@@ -1,31 +1,31 @@
 # Personal website
 
-Personal website of Anton Grabovsky
+Personal website of Anton Grabovsky.
 
 ![screenshot](screenshot.png)
 
-## Install the dependencies
+## Install dependencies
 
 ```bash
-yarn
+pnpm install
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 
 ```bash
-quasar dev
+pnpm run dev
 ```
 
 ### Lint the files
 
 ```bash
-yarn run lint
+pnpm run lint
 ```
 
 ### Build the app for production
 
 ```bash
-quasar build
+pnpm run build
 ```
 
 ### Customize the configuration

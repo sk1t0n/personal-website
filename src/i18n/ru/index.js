@@ -5,7 +5,7 @@ export default {
     education: 'Образование',
     contact: 'Контакты',
     firstName: 'Антон',
-    lastName: 'Грабовский'
+    lastName: 'Грабовский',
   },
   about: {
     word1: 'Обо',
@@ -15,7 +15,7 @@ export default {
     p3: 'Бэкенд: Symfony',
     p4: 'Базы данных: PostgreSQL, MongoDB',
     p5: 'Фронтенд: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
-    p6: 'DevOps: Docker, Docker Compose'
+    p6: 'DevOps: Docker, Docker Compose',
   },
   work: {
     word1: 'Опыт',
@@ -30,20 +30,20 @@ export default {
       li3: 'программа для публикации новостей на сайты krapt-rk.ru и krapt-news.herokuapp.com (сделана на NodeJs, Electron)',
       li4: 'Android-приложение для волонтеров: новости, акции (информация и карта Google), чат, обратная связь (отправка сообщения на email разработчика) (сделана на Java, Android SDK, Firebase). Ссылка на apk-файл:',
       li5: 'программа для публикации новостей с отправкой push-уведомлений в Android-приложение Dobrodey11 и изменения данных о сборе вещей в базе данных Firebase (сделана на NodeJS, Electron)',
-      li6: 'Вспомогательные скрипты для изменения ссылок на изображения при переносе их на другой хостинг (php, python, ruby, bash)'
+      li6: 'Вспомогательные скрипты для изменения ссылок на изображения при переносе их на другой хостинг (php, python, ruby, bash)',
     },
     timeline2: {
       title: 'ООО СЫКГЕЙМЛАБ',
       location: 'Россия, Республика Коми, г. Сыктывкар',
       subtitle: 'Ноябрь 2018 - Август 2019',
-      div: 'Разработка мобильных игр на движке Unity.'
+      div: 'Разработка мобильных игр на движке Unity (C#).',
     },
     timeline3: {
       title: 'Интроверт ЦРМ Системы',
       location: 'Россия, г. Москва',
       subtitle: 'Февраль 2022 - Май 2022',
-      div: 'Разработка доработок для AmoCRM'
-    }
+      div: 'Разработка доработок для AmoCRM (PHP, JS, JQuery).',
+    },
   },
   education: {
     word1: 'Моё',
@@ -51,12 +51,13 @@ export default {
     image_title1: 'Прогиб прямоугольной пластины',
     image_title2: 'Коллоквиум по аналитической геометрии',
     title: '2013 - 2017',
-    subtitle1: 'Сыктывкарский государственный университет им. Питирима Сорокина',
+    subtitle1:
+      'Сыктывкарский государственный университет им. Питирима Сорокина',
     subtitle2: 'Математика и компьютерные науки',
-    content: 'Бакалавр математики'
+    content: 'Бакалавр математики',
   },
   contact: {
     word1: 'Мои',
-    word2: 'контакты'
-  }
+    word2: 'контакты',
+  },
 }

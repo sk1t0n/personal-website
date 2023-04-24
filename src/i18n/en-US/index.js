@@ -5,7 +5,7 @@ export default {
     education: 'Education',
     contact: 'Contact',
     firstName: 'Anton',
-    lastName: 'Grabovsky'
+    lastName: 'Grabovsky',
   },
   about: {
     word1: 'About',
@@ -15,7 +15,7 @@ export default {
     p3: 'Backend: Symfony',
     p4: 'Databases: PostgreSQL, MongoDB',
     p5: 'Frontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
-    p6: 'DevOps: Docker, Docker Compose'
+    p6: 'DevOps: Docker, Docker Compose',
   },
   work: {
     word1: 'Work',
@@ -28,22 +28,22 @@ export default {
       li1: 'a program for compressing a folder with pictures for a site (made in Java, JavaFX, Gulp)',
       li2: 'krapt-news.herokuapp.com - archive of news from the site krapt-rk.ru (made with Ruby on Rails, Bootstrap 4)',
       li3: 'a program for publishing news to the sites krapt-rk.ru and krapt-news.herokuapp.com (made in NodeJs, Electron)',
-      li4: 'Android application for volunteers: news, promotions (information and google map), chat, feedback (sending a message to the developer\'s email) (made in Java, Android SDK, Firebase). Link to apk file:',
+      li4: "Android application for volunteers: news, promotions (information and google map), chat, feedback (sending a message to the developer's email) (made in Java, Android SDK, Firebase). Link to apk file:",
       li5: 'a program for publishing news with sending push notifications to the Dobrodey11 Android application and to change data about collecting things in the Firebase database (made in NodeJS, Electron)',
-      li6: 'Helper scripts for changing links to images when transferring them to another hosting (php, python, ruby, bash)'
+      li6: 'Helper scripts for changing links to images when transferring them to another hosting (php, python, ruby, bash)',
     },
     timeline2: {
       title: 'SYKGAMELAB LLC',
       location: 'Russia, Komi Republic, Syktyvkar',
       subtitle: 'November 2018 - August 2019',
-      div: 'Development of mobile games on the Unity engine.'
+      div: 'Development of mobile games on the Unity engine (C#).',
     },
     timeline3: {
       title: 'Introvert CRM Systems',
       location: 'Russia, Moscow',
       subtitle: 'February 2022 - May 2022',
-      div: 'Development of add-ons for AmoCRM.'
-    }
+      div: 'Development of add-ons for AmoCRM (PHP, JS, JQuery).',
+    },
   },
   education: {
     word1: 'My',
@@ -53,10 +53,10 @@ export default {
     title: '2013 - 2017',
     subtitle1: 'Pitirim Sorokin Syktyvkar State University',
     subtitle2: 'Mathematics and Computer Science',
-    content: 'Bachelor of mathematics'
+    content: 'Bachelor of mathematics',
   },
   contact: {
     word1: 'Contact',
-    word2: 'me'
-  }
+    word2: 'me',
+  },
 }

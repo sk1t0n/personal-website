@@ -2,7 +2,7 @@
   <section id="about">
     <h2>{{ $t('about.word1') }} <span>{{ $t('about.word2') }}</span></h2>
     <div class="row">
-      <q-img :src="photoUrl" transition="rotate" />
+      <q-img :src="photoUrl" />
       <div>
         <p>{{ $t('about.p1') }}</p>
         <p>{{ $t('about.p2') }}</p>
@@ -15,14 +15,8 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'About',
-
-  data: () => ({
-    photoUrl: 'images/photo.jpeg'
-  })
-}
+<script setup>
+const photoUrl = 'images/photo.jpeg'
 </script>
 
 <style lang="scss">
@@ -56,7 +50,8 @@ export default {
       margin-left: 2em;
       margin-right: 2em;
 
-      .q-img, div {
+      .q-img,
+      div {
         margin: 0 auto;
       }
 

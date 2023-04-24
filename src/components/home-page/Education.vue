@@ -2,19 +2,8 @@
   <section id="education" class="container">
     <h2>{{ $t('education.word1') }} <span>{{ $t('education.word2') }}</span></h2>
     <q-card>
-      <q-carousel
-        v-model="slide"
-        vertical
-        swipeable
-        animated
-        transition-prev="slide-up"
-        transition-next="slide-down"
-        :height="heightSlider"
-        control-color="primary"
-        navigation-position="right"
-        navigation
-        infinite
-      >
+      <q-carousel v-model="slide" vertical swipeable animated transition-prev="slide-up" transition-next="slide-down"
+        :height="heightSlider" control-color="primary" navigation-position="right" navigation infinite>
         <q-carousel-slide name="DeflectionPlate" img-src="images/DeflectionPlate.png">
           <div class="deflection-plate__title">
             <div class="text-caption text-center" :style="{ color: '#26A69A' }">{{ $t('education.image_title1') }}</div>
@@ -40,26 +29,20 @@
   </section>
 </template>
 
-<script>
-export default {
-  name: 'Education',
+<script setup>
+import { computed, ref } from 'vue'
 
-  data: () => ({
-    slide: 'DeflectionPlate'
-  }),
+const slide = ref('DeflectionPlate')
 
-  computed: {
-    heightSlider () {
-      if (window.innerWidth <= 575) {
-        return `${Math.ceil(window.innerWidth / 1.31) - 45}px`
-      } else if (window.innerWidth <= 767) {
-        return '345px'
-      } else {
-        return '460px'
-      }
-    }
+const heightSlider = computed(() => {
+  if (window.innerWidth <= 575) {
+    return `${Math.ceil(window.innerWidth / 1.31) - 45}px`
+  } else if (window.innerWidth <= 767) {
+    return '345px'
+  } else {
+    return '460px'
   }
-}
+})
 </script>
 
 <style lang="scss">
@@ -70,7 +53,7 @@ export default {
     margin-right: auto;
     margin-top: 50px;
 
-    .q-img__content > div {
+    .q-img__content>div {
       background: none;
       color: #000
     }
