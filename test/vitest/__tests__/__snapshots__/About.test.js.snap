@@ -1,0 +1,3 @@
+// Vitest Snapshot v1
+
+exports[`About.vue > correct snapshot 1`] = `"About MeFullstack DeveloperProgramming languages: PHP 8.1, JavaScript (ES6 and later)Backend: SymfonyDatabases: PostgreSQL, MongoDBFrontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.jsDevOps: Docker, Docker Compose"`;
