@@ -43,7 +43,7 @@ const links = [
   { translateKey: 'navbar.contact' }
 ]
 
-const store = useDrawerStore()
+const $store = useDrawerStore()
 const $q = useQuasar()
 
 const { locale } = useI18n({ useScope: 'global' })
@@ -88,7 +88,7 @@ onMounted(() => {
 
 function linkHandler(linkTitle) {
   const element = document.querySelector(`#${linkTitle}>h2`)
-  scrollTo(element, store.updateDrawer)
+  scrollTo(element, $store.updateDrawer)
 }
 
 function changeDarkMode() {
@@ -140,7 +140,7 @@ function changeLanguage(lang) {
 
 @media screen and (max-width: 767px) {
   .logo span {
-    font-size: 0.9em !important;
+    font-size: 0.8em !important;
   }
 }
 
@@ -270,6 +270,15 @@ button.languages {
 
   span.block {
     font-family: Open Sans, Arial, Helvetica, sans-serif;
+    margin-top: -1px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  button.languages {
+    i {
+      display: none;
+    }
   }
 }
 

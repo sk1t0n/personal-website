@@ -15,16 +15,16 @@ import { ref } from 'vue'
 import { useDrawerStore } from 'src/stores/drawer'
 import Drawer from 'src/components/navbar/Drawer.vue'
 
-const store = useDrawerStore()
+const $store = useDrawerStore()
 
 const hamburger = ref(null)
 
 function hamburgerHandler() {
   hamburger.value.classList.toggle('close')
-  if (store.drawer) {
-    store.updateDrawer(false)
+  if ($store.drawer) {
+    $store.updateDrawer(false)
   } else {
-    store.updateDrawer(true)
+    $store.updateDrawer(true)
   }
 }
 </script>

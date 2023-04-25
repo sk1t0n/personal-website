@@ -1,6 +1,6 @@
 <template>
   <transition name="slide">
-    <div class="drawer" v-if="store.drawer">
+    <div class="drawer" v-if="$store.drawer">
       <ul>
         <li v-for="(link, i) in links" :key="i" @click="linkHandler(link.translateKey.split('.')[1])">
           {{ $t(link.translateKey) }}
@@ -14,7 +14,7 @@
 import { scrollTo } from 'src/utils'
 import { useDrawerStore } from 'src/stores/drawer'
 
-const store = useDrawerStore()
+const $store = useDrawerStore()
 
 const links = [
   { translateKey: 'navbar.about' },
@@ -25,7 +25,7 @@ const links = [
 
 function linkHandler(linkTitle) {
   const element = document.querySelector(`#${linkTitle}>h2`)
-  scrollTo(element, store.updateDrawer)
+  scrollTo(element, $store.updateDrawer)
 }
 </script>
 
