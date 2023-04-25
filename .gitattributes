@@ -1,0 +1,29 @@
+# Auto-detect text files
+* text=auto eol=lf
+
+# Whitespace exclusions
+*.md whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.js whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+*.json whitespace=-blank-at-eof,-space-before-tab,-tab-in-indent,trailing-space,tabwidth=2
+
+# Treat these as text files with linefeed endings
+*.md text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+
+# Binary files
+*.ico binary
+*.png binary
+*.jpeg binary
+
+# Don't count these files in statistics on GitHub
+pnpm-lock.yaml linguist-vendored
+public/** linguist-vendored
+
+# Merge our versions of files when merge conflicts arise
+pnpm-lock.yaml merge=ours
+
+# Exclude these files from the git archive export (.zip)
+.gitattributes export-ignore
+.gitignore export-ignore
+.github export-ignore
