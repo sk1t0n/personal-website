@@ -14,7 +14,7 @@ export default {
     p2: 'Programming languages: PHP 8.1, JavaScript (ES6 and later)',
     p3: 'Backend: Laravel',
     p4: 'Databases: PostgreSQL',
-    p5: 'Frontend: Vue.js, Pinia, Tailwind CSS',
+    p5: 'Frontend: Vue 3, Pinia, Tailwind CSS',
     p6: 'DevOps: Docker, Docker Compose',
   },
   work: {
