@@ -12,9 +12,9 @@ export default {
     word2: 'мне',
     p1: 'Fullstack разработчик',
     p2: 'Языки программирования: PHP 8.1, JavaScript (ES6 и более поздние версии)',
-    p3: 'Бэкенд: Symfony',
-    p4: 'Базы данных: PostgreSQL, MongoDB',
-    p5: 'Фронтенд: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
+    p3: 'Бэкенд: Laravel',
+    p4: 'Базы данных: PostgreSQL',
+    p5: 'Фронтенд: Vue.js, Pinia, Tailwind CSS',
     p6: 'DevOps: Docker, Docker Compose',
   },
   work: {

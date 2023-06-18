@@ -12,9 +12,9 @@ export default {
     word2: 'Me',
     p1: 'Fullstack Developer',
     p2: 'Programming languages: PHP 8.1, JavaScript (ES6 and later)',
-    p3: 'Backend: Symfony',
-    p4: 'Databases: PostgreSQL, MongoDB',
-    p5: 'Frontend: Vue.js, Vuex, Quasar Framework, Buefy, Nuxt.js',
+    p3: 'Backend: Laravel',
+    p4: 'Databases: PostgreSQL',
+    p5: 'Frontend: Vue.js, Pinia, Tailwind CSS',
     p6: 'DevOps: Docker, Docker Compose',
   },
   work: {
